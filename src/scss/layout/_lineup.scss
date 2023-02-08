@@ -1,0 +1,77 @@
+@use "base/mixins" as mix;
+@use "base/variables" as var;
+.lineup {
+  background-color: var.$rosa;
+  padding: 5rem 0;
+  h3,
+  p {
+
+    text-align: center;
+    color: var.$blanco;
+  }
+  .dia {
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+  }
+ 
+}
+
+.escenarios-contenedor {
+    margin-bottom: 3rem;
+  @include mix.tablet {
+    @include mix.grid(2, 5rem);
+  }
+  p {
+    color: var.$negro;
+  }
+  
+}
+.bg-amarillo {
+  background-color: var.$amarillo;
+  li:nth-child(odd){
+    background-color: darken(var.$amarillo,15%);
+  }
+}
+.bg-verde {
+  background-color: var.$verde;
+  li:nth-child(odd){
+    background-color: darken(var.$verde,12%);
+  }
+}
+.escenario {
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    height: 660px;
+    width: 600px;
+    padding-top: 2rem;
+    p{
+        &::after{
+            content: '';
+            display: block;
+            width: 20rem;
+            height: 10rem;
+            background-size: 15rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 2rem auto 0  auto;
+
+        }
+    }
+  }
+
+.edm .nombre-escenario:after{
+    background-image: url('../img/icono_edm.png')
+}
+.rock .nombre-escenario:after{
+    background-image: url('../img/icono_rock.png')
+}
+.calendario{
+    @include mix.resetear-lista;
+    li{
+        padding: 2.5rem;
+        font-weight: 700;
+        span{
+            font-weight: 400;
+        }
+    }
+}
